@@ -1,9 +1,11 @@
 {
   "name": "reqs-resort",
   "version": "1.0.0",
-  "main": "./source/pages/index.html",
+  "source": "/source/pages/index.html",
   "scripts": {
-    "tw": "npx tailwindcss -i ./source/styles/styles.css -o ./source/styles/output.css --watch"
+    "tw": "npx tailwindcss -i /source/styles/styles.css -o /source/styles/output.css --watch",
+    "build": "parcel build",
+    "watch": "parcel"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
     "swup": "^2.0.14"
   },
   "devDependencies": {
+    "parcel": "^2.5.0",
     "tailwindcss": "^3.0.24"
   }
 }
