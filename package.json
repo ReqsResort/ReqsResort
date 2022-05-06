@@ -1,0 +1,27 @@
+{
+  "name": "reqs-resort",
+  "version": "1.0.0",
+  "main": "./source/pages/index.html",
+  "scripts": {
+    "tw": "npx tailwindcss -i ./source/styles/styles.css -o ./source/styles/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustReq/Reqs-Resort.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustReq/Reqs-Resort/issues"
+  },
+  "homepage": "https://github.com/JustReq/Reqs-Resort#readme",
+  "description": "",
+  "dependencies": {
+    "autoprefixer": "^10.4.7",
+    "swup": "^2.0.14"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}
