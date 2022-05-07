@@ -35,20 +35,33 @@ const changeTheme = () => {
     } else document.getElementById("root").classList.remove("dark");
 }
 
+const changeThemeIcon = (theme) => {
+    switch (theme) {
+        case "light":
+            domElements.menuModalSelectThemeIconLight.style.display = "block";
+            domElements.menuModalSelectThemeIconDark.style.display = "none";
+            break;
+        case "dark":
+            domElements.menuModalSelectThemeIconLight.style.display = "none";
+            domElements.menuModalSelectThemeIconDark.style.display = "block";
+            break;
+    }
+}
+
 const changeThemeButton = () => {
     switch (domElements.menuModalSelectTheme.value) {
         case "light":
             localStorage.theme = "light";
-            domElements.menuModalSelectThemeIcon.src = "../images/icons/sun.svg";
+            changeThemeIcon("light");
             break;
         case "dark":
             localStorage.theme = "dark";
-            domElements.menuModalSelectThemeIcon.src = "../images/icons/moon.svg";
+            changeThemeIcon("dark");
             break;
         case "system":
             localStorage.removeItem('theme');
-            if (window.matchMedia("(prefers-color-scheme: dark)").matches) domElements.menuModalSelectThemeIcon.src = "../images/icons/moon.svg";
-            else domElements.menuModalSelectThemeIcon.src = "../images/icons/sun.svg";
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) changeThemeIcon("dark");
+            else changeThemeIcon("light");
     }
 }
 

@@ -13,8 +13,9 @@
     <link rel="icon" href="../images/icons/favicon.ico" type="image/x-icon" />
     <link href="../styles/output.css" rel="stylesheet" />
     <title>Req's Resort</title>
-    <meta content="Explore the resort!" property="og:title" />
-    <meta content="Req's Resort is a hub for all of Req's programming projects, most of which are Terraria mods." property="og:description" />
+    <meta content="Req's Resort" property="og:title" />
+    <meta content="Req's Resort is a hub for all of Req's programming projects, most of which are Terraria mods."
+        property="og:description" />
     <meta content="https://reqsresort.netlify.app" property="og:url" />
     <meta content="#17192e" data-react-helmet="true" name="theme-color" />
     <script>
@@ -40,7 +41,7 @@
             </button>
         </div>
     </div>
-    <div id="menu-modal" class="hidden bg-black bg-opacity-30 backdrop-blur-sm w-screen h-screen fixed z-[1]">
+    <div id="menu-modal" class="bg-black bg-opacity-30 backdrop-blur-sm w-screen h-screen fixed z-[1]">
         <div class="bg-white dark:bg-[#1e293b] w-[90vw] m-auto mt-5 rounded-xl">
             <nav class="flex flex-col ml-[10%]">
                 <div class="flex justify-between mt-3">
@@ -81,7 +82,10 @@
                             <h1 class="font-Text text-xl font-bold text-black dark:text-white">Theme</h1>
                         </div>
                         <div class="flex flex-row mr-6">
-                            <img id="menu-select-theme-icon" src="../images/icons/sun.svg" class="w-7">
+                            <img id="menu-select-theme-icon-light" src="../images/icons/sun.svg"
+                                class="w-7 absolute right-[30%]">
+                            <img id="menu-select-theme-icon-dark" src="../images/icons/moon.svg"
+                                class="w-7 absolute right-[30%]">
                             <select id="menu-select-theme"
                                 class="focus:outline-none bg-white dark:bg-[#1e293b] font-Text text-black dark:text-white">
                                 <option value="light">Light</option>
@@ -94,7 +98,7 @@
             </nav>
         </div>
     </div>
-    <nav class="w-full h-[10vh] flex justify-between items-center">
+    <nav id="header" class="w-full h-[10vh] flex justify-between items-center">
         <div class="inline-block m-auto ml-[7.5%]">
             <a href="./index.html" class="font-Title text-black dark:text-white text-4xl">Req's Resort</a>
         </div>
@@ -110,16 +114,16 @@
     <script>
         if (!("theme" in localStorage)) {
             domElements.menuModalSelectTheme.value = "system";
-            if (window.matchMedia("(prefers-color-scheme: dark)").matches) domElements.menuModalSelectThemeIcon.src = "../images/icons/moon.svg";
-            else domElements.menuModalSelectThemeIcon.src = "../images/icons/sun.svg";
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) changeThemeIcon("dark");
+            else changeThemeIcon("light");
         }
         else {
             if (localStorage.theme === "dark") {
                 domElements.menuModalSelectTheme.value = "dark";
-                domElements.menuModalSelectThemeIcon.src = "../images/icons/moon.svg";
+                changeThemeIcon("dark");
             } else {
                 domElements.menuModalSelectTheme.value = "light";
-                domElements.menuModalSelectThemeIcon.src = "../images/icons/sun.svg";
+                changeThemeIcon("light");
             }
         }
     </script>

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "source": "/source/pages/index.html",
   "scripts": {
-    "tw": "npx tailwindcss -i /source/styles/styles.css -o /source/styles/output.css --watch",
+    "tw": "npx tailwindcss -i ./source/styles/styles.css -o ./source/styles/output.css --watch",
     "build": "parcel build",
     "watch": "parcel"
   },
