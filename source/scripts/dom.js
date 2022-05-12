@@ -7,7 +7,5 @@ const domElements = {
     searchModalButtonCancel: document.getElementById("search-modal-button-cancel"),
     menuModal: document.getElementById("menu-modal"),
     menuModalButtonCancel: document.getElementById("menu-modal-button-cancel"),
-    menuModalSelectThemeIconLight: document.getElementById("menu-select-theme-icon-light"),
-    menuModalSelectThemeIconDark: document.getElementById("menu-select-theme-icon-dark"),
     menuModalSelectTheme: document.getElementById("menu-select-theme")
 };
