@@ -1,12 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="root" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+    <link rel="icon" href="/source/images/favicon.ico" type="image/x-icon" />
+    <link href="/source/styles/output.css" rel="stylesheet" />
+    <script src="/source/scripts/theme.js"></script>
+    <title>Req's Resort | Blog</title>
+    <meta content="Req's Resort" property="og:title" />
+    <meta content="Req's Resort is a hub for all of Req's programming projects, most of which are Terraria mods."
+        property="og:description" />
+    <meta content="https://reqsresort.netlify.app" property="og:url" />
+    <meta content="#17192e" data-react-helmet="true" name="theme-color" />
 </head>
-<body>
-    
+
+<body class="bg-blue-50 dark:bg-[#17192e]">
+    <div id="search-modal" class="hidden bg-black bg-opacity-30 backdrop-blur-sm w-screen h-screen fixed z-[1]">
+        <div class="bg-white dark:bg-[#1e293b] w-[90vw] h-[7vh] m-auto mt-5 rounded-xl flex justify-between">
+            <button type="button" id="search-modal-button-search" class="m-auto mx-4">
+                <img src="/source/images/icons/search.svg" class="max-w-none" />
+            </button>
+            <div class="w-full h-full flex">
+                <input type="text" placeholder="Search website" autocapitalize="off" autocomplete="off"
+                    id="search-modal-search-bar"
+                    class="w-full text-lg m-auto font-Text text-black dark:text-white focus:outline-none bg-white caret-black dark:bg-[#1e293b] dark:caret-white" />
+            </div>
+            <button type="button" id="search-modal-button-cancel" class="m-auto mx-4">
+                <img src="/source/images/icons/close.svg" class="max-w-none" />
+            </button>
+        </div>
+    </div>
+    <div id="menu-modal" class="hidden bg-black bg-opacity-30 backdrop-blur-sm w-screen h-screen fixed z-[1]">
+        <div class="bg-white dark:bg-[#1e293b] w-[90vw] m-auto mt-5 rounded-xl">
+            <nav class="flex flex-col w-[85%] m-auto">
+                <div class="flex justify-between mt-7 my-3">
+                    <div class="m-auto mx-0">
+                        <a href="/source/pages/blog" class="font-Text text-black dark:text-white text-xl">Blog</a>
+                    </div>
+                    <button type="button" id="menu-modal-button-cancel">
+                        <img src="/source/images/icons/close.svg" class="max-w-none" />
+                    </button>
+                </div>
+                <div class="my-3">
+                    <div class="m-auto mx-0">
+                        <a href="/source/pages/wiki" class="font-Text text-black dark:text-white text-xl">Wiki</a>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="m-auto mx-0">
+                        <a href="/source/pages/projects"
+                            class="font-Text text-black dark:text-white text-xl">Projects</a>
+                    </div>
+                </div>
+                <div class="my-3 mb-7">
+                    <div class="m-auto mx-0">
+                        <a href="/source/pages/partners"
+                            class="font-Text text-black dark:text-white text-xl">Partners</a>
+                    </div>
+                </div>
+            </nav>
+            <hr class="border-2 w-[85%] m-auto rounded-xl border-[#8594a8]">
+            <div class="h-20 w-[85%] flex justify-between m-auto">
+                <div class="m-auto mx-0">
+                    <h1 href="/source/pages" class="font-Text text-black dark:text-white text-xl">Switch
+                        theme</h1>
+                </div>
+                <div class="m-auto mx-0">
+                    <div id="menu-modal-button-theme"
+                        class="flex border-2 border-[#8594a8] dark:border-[#141a23] rounded-xl pl-3 py-3 dark:bg-[#1e293b]">
+                        <img src="/source/images/icons/sun.svg" class="block dark:hidden">
+                        <img src="/source/images/icons/moon.svg" class="hidden dark:block">
+                        <div class="w-[4.25rem]">
+                            <p id="menu-modal-theme-text"
+                                class="m-auto ml-3 font-Text font-bold capitalize text-black dark:text-white">Light</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav id="header" class="w-full h-[10vh] flex justify-between items-center">
+        <div class="inline-block m-auto ml-[7.5%]">
+            <a href="/source/pages" class="font-Title text-black dark:text-white text-4xl">Req's Resort</a>
+        </div>
+        <button type="button" id="header-button-search" class="m-auto mx-0">
+            <img src="/source/images/icons/search.svg" class="max-w-none" />
+        </button>
+        <button type="button" id="header-button-menu" class="m-auto mx-[5%]">
+            <img src="/source/images/icons/menu.svg" class="max-w-none" />
+        </button>
+    </nav>
+    <script src="/source/scripts/dom.js"></script>
+    <script src="/source/scripts/theme.js"></script>
+    <script src="/source/scripts/index.js"></script>
 </body>
+
 </html>
