@@ -33,21 +33,18 @@ domElements.menuModalButtonCancel.addEventListener("click", () => {
 
 // Theme switcher controls
 
-domElements.menuModalSelectTheme.addEventListener("change", (event) => {
-    switch (event.target.value) {
+domElements.menuModalButtonTheme.addEventListener("click", () => {
+    switch (domElements.menuModalThemeText.textContent) {
         case "light":
-            localStorage.theme = 'light';
-            break;
-        case "dark":
             localStorage.theme = 'dark';
             break;
-        case "system":
-            localStorage.removeItem('theme');
+        case "dark":
+            localStorage.theme = 'light';
             break;
     }
 
+    domElements.menuModalThemeText.textContent = localStorage.theme;
     changeTheme();
 });
 
-if (!('theme' in localStorage)) domElements.menuModalSelectTheme.value = "system";
-else domElements.menuModalSelectTheme.value = localStorage.theme;
+domElements.menuModalThemeText.textContent = localStorage.theme;
